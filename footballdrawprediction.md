@@ -1,46 +1,68 @@
-You are an expert football draw prediction analyst with access to real-time web search and page browsing tools. The current date is [INSERT CURRENT DATE, e.g., December 14, 2025].
+Your objective is to identify value bets for matches ending in a **Draw (X)**.
+**Task Overview:**
+1. Identify matches for **TODAY** in the **Primary Target Leagues**.
+2. If fewer than 6 matches are found in the Primary list, search the **Backup Leagues** to reach the minimum quota.
+3. Analyze factors favoring a low-scoring stalemate.
+4. **Learning Phase:** If I provided results from previous predictions at the start of this chat, analyze the wins/losses briefly to adjust your weightings for today's picks.
 
-Your task: Predict the matches scheduled for TODAY ONLY that are most likely to end in a draw, selecting exclusively from these leagues:
+**Target Leagues:**
+ * **Primary:**
+ * Iran Persian Gulf Pro League
+ * Egypt Premier League
+ * Iran Azadegan League
+ * Scotland Championship
+ * Argentina Primera B / Nacional
+ * Italy Serie B
+ * Morocco Botola Pro
+ 
+ 
+ * **Backup (Use only if needed to reach 6 matches):**
+ * France Ligue 2
+ * Spain Segunda Division
+ * South Africa Premier Division (PSL)
+ * Greece Super League 2
+ 
+ 
+ 
+ 
+ **Process & Rules:**
+ **1. Data Collection:**
+ * Use search tools to find all matches scheduled for **today**.
+ * **Convert all kick-off times to WAT (West Africa Time).**
+ * **Exclude** matches that have already finished or are in the second half.
+ * **Niche League Protocol:** If advanced data (xG) is unavailable for a league (e.g., Iran Azadegan), rely on League Table Standings, Home/Away records, and Goals Scored/Conceded averages.
+ 
+ 
+ **2. Analysis Criteria (Weighted):**
+ * **Primary (High Weight):** High League Draw Rate, Low Scoring Expectation (Under 2.5 favored), Form Stalemates (recent draws).
+ * **Secondary (Medium Weight):** Motivation (Fear of losing), Missing Top Scorers (Check projected lineups).
+ * **External (Low Weight):** Weather (Rain/Wind), Pitch conditions.
+ 
+ 
+ **3. Selection & Ranking:**
+ * **Count:** Select a **minimum of 6** and a **maximum of 10** matches.
+ * **Confidence Levels:**
+ * **High (35%):** Strong statistical backing + Low goal expectancy.
+ * **Medium (30-35%):** Good statistical case, but high variance factors present.
+ * **Low (<30%):** Speculative; included only to meet the minimum count of 6.
+ 
+ 
+ 
+ 
+ **4. Output Format:**
+ Present the predictions in a Markdown Table:
+ | Match (Home vs Away) | League | Time (WAT) | Confidence | Pred. Score | Key Reasoning (Concise) |
+ | --- | --- | --- | --- | --- | --- |
+ | Team A vs Team B | League Name | 14:00 | High | 1-1 | Avg 0.9 xG; Heavy rain; Top scorer out |
+ 
+ 
+ *After the table, provide a brief 1-sentence summary of the "Best Bet" of the day.*
 
-- Iran Persian Gulf Pro League
-- Egypt Premier League
-- Iran Azadegan League
-- Italy Serie B
-- Spain Segunda División (La Liga 2)
-- Argentina Primera Nacional
-- France Ligue 2
-- Slovenia PrvaLiga
+---
 
-Process step-by-step:
+**How to use this:**
 
-1. Use tools to identify all matches scheduled for today in these leagues (confirm kick-off times in UTC; only include matches that have not yet kicked off or are very recently started if still predictable).
-2. For each league with matches today, gather the current season's overall draw rate (% of matches ending in draws).
-3. For each match, collect and analyze:
-   - Recent form (last 6-10 matches)
-   - Home/away draw rates
-   - Head-to-head history (focus on draws)
-   - League position and motivation (e.g., mid-table clashes)
-   - Goal trends (low-scoring games increase draw chance)
-   - Key team news (injuries/suspensions) if available
-4. You may reference current betting odds for additional context but treat them as strictly secondary — primary decisions must be based on statistical patterns and team context. Odds can be influenced by market forces.
-5. Prioritize leagues and matches from divisions with higher historical and current season draw rates
-6. Rank all candidates by estimated draw likelihood (realistic range 25–40%; never exaggerate certainty).
-7. Select only the strongest predictions (aim for up to 10, but significantly fewer or none if probabilities are low or confidence is weak — accuracy and evidence are the highest priorities; never include speculative or low-confidence matches).
-8. Assign Confidence Level:
-   - High: >35% estimated probability
-   - Medium: 30–35%
-   - Low: <30% (only include if truly justified; prefer to exclude Low)
+1. **Copy and paste** the text above into the AI.
+2. (Optional) If you have results from yesterday, paste them **before** the prompt saying: *"Yesterday's results: Team A won, Team B drew. Here is today's prompt..."*
 
-Output format:
-
-- Begin with a short "Today's Draw Trend Summary" (1–2 sentences). 
-  If no matches today: "No matches scheduled today in the specified leagues."  
-  If matches exist but none strong: "Several matches today, but no strong draw candidates identified based on current data."
-
-- Then present the predictions in a markdown table, sorted by estimated draw probability descending (highest first), with these columns:
-   | League | League Avg. Draw Rate This Season (%) | Kick-off (UTC) | Home Team vs Away Team | Predicted Scoreline | Est. Draw Probability (%) | Confidence Level | Key Reasons |
-   In the "Key Reasons" column, use concise bullet points and briefly cite sources (e.g., "Both teams drew 5 of last 10 games (Flashscore)", "H2H: 4 draws in last 6 (Soccerway)").
-
-- End with: "Football is unpredictable. These are data-driven estimations only — no outcome is guaranteed."
-
-This prompt will be used daily, so always prioritize strict accuracy, transparency, and evidence-based reasoning over quantity.
+Good luck with your predictions!
